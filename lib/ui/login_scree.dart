@@ -1,3 +1,4 @@
+import 'package:firebase_auth/ui/register_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -103,7 +104,12 @@ class _LoginScreenState extends State<LoginScreen> {
                       children: [
                         Text("Don't have an account? "),
                         GestureDetector(
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => RegisterScreen()));
+                          },
                           child: const Text(
                             "Sign up",
                             style: TextStyle(
