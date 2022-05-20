@@ -34,8 +34,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
       },
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
-        prefixIcon: Icon(Icons.account_circle),
-        contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
+        prefixIcon: const Icon(Icons.account_circle),
+        contentPadding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
         hintText: "First name",
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
@@ -52,8 +52,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
       },
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
-        prefixIcon: Icon(Icons.account_circle),
-        contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
+        prefixIcon: const Icon(Icons.account_circle),
+        contentPadding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
         hintText: "Second Name",
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
@@ -69,8 +69,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
       },
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
-        prefixIcon: Icon(Icons.mail),
-        contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
+        prefixIcon: const Icon(Icons.mail),
+        contentPadding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
         hintText: "Email",
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
@@ -87,8 +87,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
       },
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
-        prefixIcon: Icon(Icons.key),
-        contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
+        prefixIcon: const Icon(Icons.key),
+        contentPadding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
         hintText: "Password",
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
@@ -106,8 +106,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
       },
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
-        prefixIcon: Icon(Icons.key),
-        contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
+        prefixIcon: const Icon(Icons.key),
+        contentPadding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
         hintText: "Confirm Password",
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
@@ -121,7 +121,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
       borderRadius: BorderRadius.circular(30),
       child: MaterialButton(
         onPressed: () {},
-        padding: EdgeInsets.fromLTRB(20, 15, 20, 15),
+        padding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
         minWidth: MediaQuery.of(context).size.width,
         child: const Text("Register",
             textAlign: TextAlign.center,
@@ -136,7 +136,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
         backgroundColor: Colors.transparent,
         elevation: 0,
         leading: IconButton(
-          icon: Icon(
+          icon: const Icon(
             Icons.arrow_back,
             color: Colors.red,
           ),
@@ -165,29 +165,29 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         fit: BoxFit.contain,
                       ),
                     ),
-                    SizedBox(height: 10),
+                    const SizedBox(height: 10),
                     firstNameFIeld,
-                    SizedBox(height: 10),
+                    const SizedBox(height: 10),
                     secondNameField,
-                    SizedBox(height: 10),
+                    const SizedBox(height: 10),
                     emailField,
-                    SizedBox(height: 10),
+                    const SizedBox(height: 10),
                     passwordNameField,
-                    SizedBox(height: 10),
+                    const SizedBox(height: 10),
                     confpasswordNameField,
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
                     registetBtn,
-                    SizedBox(height: 10),
+                    const SizedBox(height: 10),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text("Do you have an account? "),
+                        const Text("Do you have an account? "),
                         GestureDetector(
                           onTap: () {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => LoginScreen()));
+                                    builder: (context) => const LoginScreen()));
                           },
                           child: const Text(
                             "Log in",
