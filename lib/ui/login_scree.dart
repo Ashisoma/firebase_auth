@@ -1,3 +1,4 @@
+import 'package:firebase_auth/ui/home_screen.dart';
 import 'package:firebase_auth/ui/register_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -60,7 +61,10 @@ class _LoginScreenState extends State<LoginScreen> {
       color: Colors.redAccent,
       borderRadius: BorderRadius.circular(30),
       child: MaterialButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => HomeScreen()));
+        },
         padding: EdgeInsets.fromLTRB(20, 15, 20, 15),
         minWidth: MediaQuery.of(context).size.width,
         child: const Text("Login",
@@ -105,7 +109,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         Text("Don't have an account? "),
                         GestureDetector(
                           onTap: () {
-                            Navigator.push(
+                            Navigator.pushReplacement(
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) => RegisterScreen()));
