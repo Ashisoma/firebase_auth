@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.firebase_auth">
    <application
-        android:label="firebase_auth"
+        android:label="Firebase"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
