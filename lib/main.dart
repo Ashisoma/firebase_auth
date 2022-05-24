@@ -1,4 +1,4 @@
-import 'package:firebase_auth/ui/login_scree.dart';
+import 'package:firebase_authentication/ui/login_scree.dart';
 import 'package:flutter/material.dart';
 
 void main() {

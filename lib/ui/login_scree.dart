@@ -1,5 +1,5 @@
-import 'package:firebase_auth/ui/home_screen.dart';
-import 'package:firebase_auth/ui/register_screen.dart';
+import 'package:firebase_authentication/ui/home_screen.dart';
+import 'package:firebase_authentication/ui/register_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
