@@ -3,6 +3,7 @@ import 'package:firebase_authentication/ui/home_screen.dart';
 import 'package:firebase_authentication/ui/register_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -84,8 +85,7 @@ class _LoginScreenState extends State<LoginScreen> {
       borderRadius: BorderRadius.circular(30),
       child: MaterialButton(
         onPressed: () {
-          Navigator.push(
-              context, MaterialPageRoute(builder: (context) => HomeScreen()));
+            login(emailController.text, passwordController.text);
         },
         padding: EdgeInsets.fromLTRB(20, 15, 20, 15),
         minWidth: MediaQuery.of(context).size.width,
@@ -155,5 +155,21 @@ class _LoginScreenState extends State<LoginScreen> {
         ),
       ),
     );
+  }
+
+  // LOGIN FUNCTION
+  void login(String email, String password) async {
+    if (_formKey.currentState!.validate()) {
+      _auth
+          .signInWithEmailAndPassword(email: email, password: password)
+          .then((uuid) => {
+                Fluttertoast.showToast(msg: "Login successful"),
+                Navigator.of(context).pushReplacement(
+                    MaterialPageRoute(builder: ((context) => HomeScreen())))
+              })
+          .catchError((e) {
+        Fluttertoast.showToast(msg: e!.message);
+      });
+    }
   }
 }

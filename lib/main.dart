@@ -1,7 +1,10 @@
 import 'package:firebase_authentication/ui/login_scree.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  Firebase.initializeApp();
   runApp(const MyApp());
 }
 
@@ -16,8 +19,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.red,
       ),
-      home:  const LoginScreen(),
+      home: const LoginScreen(),
     );
-  } 
+  }
 }
-
