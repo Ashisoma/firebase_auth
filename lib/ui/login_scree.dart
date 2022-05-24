@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_authentication/ui/home_screen.dart';
 import 'package:firebase_authentication/ui/register_screen.dart';
 import 'package:flutter/material.dart';
@@ -18,11 +19,23 @@ class _LoginScreenState extends State<LoginScreen> {
   final TextEditingController emailController = new TextEditingController();
   final TextEditingController passwordController = new TextEditingController();
 
+  // firebase_authentication
+  final _auth = FirebaseAuth.instance;
+
   @override
   Widget build(BuildContext context) {
     final emailField = TextFormField(
       autofocus: false,
       controller: emailController,
+      validator: (value) {
+        if (value!.isEmpty) {
+          return ("Please enter a your email address");
+        }
+        if (!RegExp("^[a-zA-Z0-9_.-]+@[a-zA-Z0-9.-]+.[a-z]").hasMatch(value)) {
+          return ("Please enter a valid email address");
+        }
+        return null;
+      },
       keyboardType: TextInputType.emailAddress,
       onSaved: (value) {
         emailController.text = value!;
@@ -46,6 +59,15 @@ class _LoginScreenState extends State<LoginScreen> {
         passwordController.text = value!;
       },
       textInputAction: TextInputAction.done,
+      validator: (value) {
+        RegExp reg = new RegExp(r'^.{6,0}$');
+        if (value!.isEmpty) {
+          return ("Please enter your password");
+        }
+        if (reg.hasMatch(value)) {
+          return ("Please enter a valid password (6 minimum characters");
+        }
+      },
       decoration: InputDecoration(
         prefixIcon: Icon(Icons.key),
         contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
