@@ -40,38 +40,40 @@ class _HomeScreenState extends State<HomeScreen> {
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(20),
-          child: Column(
-            children: [
-              SizedBox(
-                height: 200,
-                child: Image.asset(
-                  "assets/logo.png",
-                  fit: BoxFit.contain,
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                SizedBox(
+                  height: 200,
+                  child: Image.asset(
+                    "assets/logo.png",
+                    fit: BoxFit.contain,
+                  ),
                 ),
-              ),
-              const Text(
-                "Welcome back",
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-              ),
-              Text(
-                "${loggedUser.firstName} ${loggedUser.secondName}",
-                style: TextStyle(
-                    color: Colors.black54, fontWeight: FontWeight.w500),
-              ),
-              Text(
-                "${loggedUser.email}",
-                style: TextStyle(
-                    color: Colors.black54, fontWeight: FontWeight.w500),
-              ),
-              const SizedBox(
-                height: 15,
-              ),
-              ActionChip(
-                  label: const Text("Logout"),
-                  onPressed: () {
-                    logout(context);
-                  }),
-            ],
+                const Text(
+                  "Welcome back",
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                ),
+                Text(
+                  "${loggedUser.firstName} ${loggedUser.secondName}",
+                  style: TextStyle(
+                      color: Colors.black54, fontWeight: FontWeight.w500),
+                ),
+                Text(
+                  "${loggedUser.email}",
+                  style: TextStyle(
+                      color: Colors.black54, fontWeight: FontWeight.w500),
+                ),
+                const SizedBox(
+                  height: 15,
+                ),
+                ActionChip(
+                    label: const Text("Logout"),
+                    onPressed: () {
+                      logout(context);
+                    }),
+              ],
+            ),
           ),
         ),
       ),

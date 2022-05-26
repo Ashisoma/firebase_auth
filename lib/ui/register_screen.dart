@@ -36,7 +36,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
       autofocus: false,
       controller: firstNameEditingController,
       validator: (value) {
-        RegExp reg = new RegExp(r'^.{3,0}$');
+        RegExp reg = new RegExp(r'^.{0,3}$');
         if (value!.isEmpty) {
           return ("First Name can't be empty'");
         }
@@ -64,7 +64,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
       autofocus: false,
       controller: seconfNameEditingController,
       validator: (value) {
-        RegExp reg = new RegExp(r'^.{3,0}$');
+        RegExp reg = new RegExp(r'^.{0,3}$');
         if (value!.isEmpty) {
           return ("Second Name can't be empty'");
         }
@@ -119,11 +119,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
       controller: passwordNameEditingController,
       // keyboardType: TextInputType.,
       validator: (value) {
-        RegExp reg = new RegExp(r'^.{6,0}$');
+        RegExp reg = new RegExp(r'^.{0,6}$');
         if (value!.isEmpty) {
           return ("Please enter your password");
         }
-        if (reg.hasMatch(value)) {
+        if (value.length < 6) {
           return ("Please enter a valid password (6 minimum characters");
         }
       },
@@ -147,11 +147,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
       controller: confirmPasswordNameEditingController,
       // keyboardType: TextInputType.,
       validator: (value) {
-        RegExp reg = new RegExp(r'^.{6,0}$');
+        RegExp reg = new RegExp(r'^.{0,6}$');
         if (value!.isEmpty) {
           return ("Please enter your password");
         }
-        if (reg.hasMatch(value)) {
+        if (value.length<6) {
           return ("Please enter a valid password (6 minimum characters)");
         }
         if (passwordNameEditingController.text != value) {

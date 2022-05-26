@@ -61,11 +61,11 @@ class _LoginScreenState extends State<LoginScreen> {
       },
       textInputAction: TextInputAction.done,
       validator: (value) {
-        RegExp reg = new RegExp(r'^.{6,0}$');
+        // RegExp reg = new RegExp(r'^.{6,0}$');
         if (value!.isEmpty) {
           return ("Please enter your password");
         }
-        if (reg.hasMatch(value)) {
+        if (value.length<6) {
           return ("Please enter a valid password (6 minimum characters");
         }
       },
